@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: aurademo;
+  src: url("/public/aurademo.regular.ttf");
+}
+
+@font-face {
+  font-family: movingskate;
+  src: url("/public/moving-skate.ttf");
+}
