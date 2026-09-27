@@ -1,27 +1,94 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fde2e7;
-  --foreground: #eedbf0;
-  --text-primary: #4B2154;
+  --background: #fff5f0;
+  --foreground: #4d2756;
+  --text-primary: #4d2756;
+  --text-secondary: #0d090a;
+  --accent-gold: #dd891f;
+  --accent-purple: #4d2756;
+  --accent-lavender: #9d71a8;
+  --section-lavender: #f9edf7;
+  --section-cream: #fff5f0;
+  --button-purple: #9d71a8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-lavender: var(--accent-lavender);
+  --color-section-lavender: var(--section-lavender);
+  --color-section-cream: var(--section-cream);
+  --color-button-purple: var(--button-purple);
+  --font-futura: "Futura", "Futura PT", var(--font-futura), var(--font-montserrat), sans-serif;
+  --font-times: "Times New Roman", "Times", serif;
+  --font-playfair: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans: "Futura", "Futura PT", var(--font-futura), var(--font-montserrat), sans-serif;
+  --font-serif: "Times New Roman", "Times", var(--font-cormorant), Georgia, serif;
+  --font-script: "Moving Skates", "MovingSkates", var(--font-alex), var(--font-dancing), cursive;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #fde2e7;
-    --foreground: #eedbf0;
-  }
-} */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-futura), sans-serif;
+  overflow-x: hidden;
+}
+
+.font-times {
+  font-family: "Times New Roman", "Times", serif;
+}
+
+.font-futura {
+  font-family: "Futura", "Futura PT", "Futura-Medium", "Century Gothic", var(--font-futura), var(--font-montserrat), sans-serif;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+}
+
+.font-script {
+  font-family: "Moving Skates", "MovingSkates", var(--font-alex), var(--font-dancing), cursive;
+}
+
+.font-serif {
+  font-family: "Times New Roman", "Times", var(--font-cormorant), Georgia, serif;
+}
+
+.font-sans {
+  font-family: "Futura", "Futura PT", var(--font-futura), var(--font-montserrat), sans-serif;
+}
+
+@keyframes beeFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(3deg);
+  }
+}
+
+.animate-bee {
+  animation: beeFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes gentleDrift {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(12px);
+  }
+}
+
+.animate-drift {
+  animation: gentleDrift 8s ease-in-out infinite;
 }

@@ -1,13 +1,19 @@
-import Image from "next/image";
 import Banner from "./_components/Banner";
-import NavBar from "./_components/NavBar";
+import BehindTheScene from "./_components/BehindTheScene";
+import Collaboration from "./_components/Collaboration";
+import CreativeDump from "./_components/CreativeDump";
+import CreativeOfferings from "./_components/CreativeOfferings";
+import Footer from "./_components/Footer";
 
 export default function Home() {
   return (
-    <div className="grid justify-items-center font-[family-name:var(--font-geist-sans)] bg-primary relative">
-      <NavBar />
+    <main className="w-full overflow-x-hidden bg-background">
       <Banner />
-      <Image src="./peonies-creeper.svg" alt="peonies creeper" width={200} height={100} className="absolute top-0 right-0"/>
-    </div>
+      <BehindTheScene />
+      <CreativeOfferings />
+      <Collaboration />
+      <CreativeDump />
+      <Footer />
+    </main>
   );
 }
