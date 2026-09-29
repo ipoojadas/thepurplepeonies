@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Button from "./Button";
 import Logo from "./Logo";
+import { sectionPadding } from "./sectionPadding";
 
 const navLinks = [
   { label: "HOME", href: "/" },
@@ -18,7 +19,7 @@ const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-40 w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 max-w-[1800px] mx-auto">
+    <header className={`relative z-40 w-full ${sectionPadding}`}>
       <div className="flex w-full items-center justify-between gap-6 py-6 md:py-8">
         <Logo />
 
@@ -34,7 +35,7 @@ const NavBar = () => {
           ))}
         </nav>
 
-        <div className="hidden lg:block shrink-0 lg:mr-16 xl:mr-24 2xl:mr-32">
+        <div className="hidden lg:block shrink-0">
           <Button href="#contact">
             LET&apos;S WORK TOGETHER
           </Button>
@@ -44,7 +45,7 @@ const NavBar = () => {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="p-2 text-[#4D2756] lg:hidden focus:outline-none mr-6 sm:mr-10"
+          className="p-2 text-[#4D2756] lg:hidden focus:outline-none"
           aria-label="Toggle navigation menu"
         >
           <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">

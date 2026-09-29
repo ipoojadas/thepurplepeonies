@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import BrushDivider from "./BrushDivider";
 import { sectionPadding } from "./sectionPadding";
@@ -5,63 +8,64 @@ import { sectionPadding } from "./sectionPadding";
 const processSteps = [
   {
     title: "DISCOVER",
-    description: "Exploring ideas, inspiration and stories that spark creative possibilities.",
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 sm:h-7 sm:w-7 text-[#7D538B]">
-        <circle cx="24" cy="24" r="13" stroke="currentColor" strokeWidth="1.4" />
-        <path d="M24 13L26.2 21.8L35 24L26.2 26.2L24 35L21.8 26.2L13 24L21.8 21.8L24 13Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
-        <circle cx="24" cy="24" r="1.5" fill="currentColor" />
-        <path d="M16 16L17.5 17.5M30.5 30.5L32 32M32 16L30.5 17.5M17.5 30.5L16 32" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-        <path d="M9 11L9.8 9.2L11.5 8.5L9.8 7.8L9 6L8.2 7.8L6.5 8.5L8.2 9.2L9 11Z" fill="currentColor" />
-        <path d="M39 37L39.8 35.2L41.5 34.5L39.8 33.8L39 32L38.2 33.8L36.5 34.5L38.2 35.2L39 37Z" fill="currentColor" />
-      </svg>
-    ),
+    line1: "Exploring ideas, inspiration and",
+    line2: "stories that spark creative possibilities.",
+    icon: "/frame3/discover-icon.png",
   },
   {
     title: "CONCEPTUALIZE",
-    description: "Turning thoughts into concepts and visual directions.",
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 sm:h-7 sm:w-7 text-[#7D538B]">
-        <path d="M17 21C17 16.5817 20.134 13 24 13C27.866 13 31 16.5817 31 21C31 24.2 29.2 26.8 27.5 29H20.5C18.8 26.8 17 24.2 17 21Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
-        <path d="M21 29H27M21.5 32H26.5M22.5 35H25.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-        <path d="M22 23V19M26 23V19M22 19H26" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-        <path d="M24 7V10M13 12L15 14M35 12L33 14M9 21H12M36 21H39" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-        <path d="M38 28L38.8 26.2L40.5 25.5L38.8 24.8L38 23L37.2 24.8L35.5 25.5L37.2 26.2L38 28Z" fill="currentColor" />
-      </svg>
-    ),
+    line1: "Turning thoughts into concepts",
+    line2: "and visual directions.",
+    icon: "/frame3/conceptualize-icon.png",
   },
   {
     title: "DESIGN",
-    description: "Bring concepts to life by crafting visuals that tell your story.",
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 sm:h-7 sm:w-7 text-[#7D538B]">
-        <path d="M24 10L31 22C31.5 24 30 26 29 27L28 32H20L19 27C18 26 16.5 24 17 22L24 10Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
-        <path d="M24 10V22" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-        <circle cx="24" cy="22" r="1.5" fill="currentColor" />
-        <path d="M19 32H29V36H19V32Z" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1.4" />
-        <path d="M11 13L11.8 11.2L13.5 10.5L11.8 9.8L11 8L10.2 9.8L8.5 10.5L10.2 11.2L11 13Z" fill="currentColor" />
-        <path d="M37 15L37.8 13.2L39.5 12.5L37.8 11.8L37 10L36.2 11.8L34.5 12.5L36.2 13.2L37 15Z" fill="currentColor" />
-      </svg>
-    ),
+    line1: "Bring concepts to life by crafting visuals",
+    line2: "that tell your story.",
+    icon: "/frame3/design-icon.png",
   },
   {
     title: "REFINE",
-    description: "Polishing, perfecting and refining every element to create timeless impact.",
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 sm:h-7 sm:w-7 text-[#7D538B]">
-        <path d="M16 19L24 11L32 19L24 37L16 19Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
-        <path d="M16 19H32" stroke="currentColor" strokeWidth="1.2" />
-        <path d="M21 19L24 11L27 19L24 37L21 19Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
-        <path d="M10 13L10.8 11.2L12.5 10.5L10.8 9.8L10 8L9.2 9.8L7.5 10.5L9.2 11.2L10 13Z" fill="currentColor" />
-        <path d="M38 13L38.8 11.2L40.5 10.5L38.8 9.8L38 8L37.2 9.8L35.5 10.5L37.2 11.2L38 13Z" fill="currentColor" />
-        <path d="M38 33L38.8 31.2L40.5 30.5L38.8 29.8L38 28L37.2 29.8L35.5 30.5L37.2 31.2L38 33Z" fill="currentColor" />
-        <path d="M10 33L10.8 31.2L12.5 30.5L10.8 29.8L10 28L9.2 29.8L7.5 30.5L9.2 31.2L10 33Z" fill="currentColor" />
-      </svg>
-    ),
+    line1: "Polishing, perfecting and refining every",
+    line2: "element to create timeless impact.",
+    icon: "/frame3/refine-icon.png",
+  },
+];
+
+const offeringsPillars = [
+  {
+    title: "HOME",
+    image: "/frame3/center-bag-and-vas-art.png",
+    alt: "Home offerings artwork with vase, flowers, bag, and sunglasses",
+  },
+  {
+    title: "FASHION",
+    image: "/frame3/fashion-and-homedecor-art.png",
+    alt: "Fashion and apparel collection with clothing rack, dress, and flowers",
+  },
+  {
+    title: "INVITATIONS",
+    image: "/frame3/invitation-card-and-greetings-art.png",
+    alt: "Invitation cards, envelope, and floral greeting cards",
+  },
+  {
+    title: "BRANDING",
+    image: "/frame3/branding-kit-art.png",
+    alt: "Branding stationery kit with logo, tags, business cards, and vase",
   },
 ];
 
 const CreativeOfferings = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % offeringsPillars.length);
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="services"
@@ -122,58 +126,98 @@ const CreativeOfferings = () => {
         {/* 3-Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-10 items-center">
           {/* Left Column: 4 Process Steps */}
-          <div className="lg:col-span-4 flex flex-col space-y-3 sm:space-y-4 lg:space-y-4 xl:space-y-5">
+          <div className="lg:col-span-4 flex flex-col space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-6 xl:space-y-8 2xl:space-y-9">
             {processSteps.map((step) => (
-              <div key={step.title} className="flex items-start gap-3 sm:gap-4 group">
-                <div className="flex h-11 w-11 sm:h-12 sm:w-12 lg:h-11 lg:w-11 xl:h-12 xl:w-12 shrink-0 items-center justify-center rounded-full bg-[#EBE0EE] shadow-sm transition-transform duration-300 group-hover:scale-110">
-                  {step.icon}
+              <div key={step.title} className="flex items-center gap-4 sm:gap-5 lg:gap-4 xl:gap-6 group">
+                <div className="relative flex h-14 w-14 sm:h-16 sm:w-16 lg:h-14 lg:w-14 xl:h-18 xl:w-18 2xl:h-20 2xl:w-20 shrink-0 items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                  <Image
+                    src={step.icon}
+                    alt={step.title}
+                    width={160}
+                    height={160}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <div>
-                  <h3 className="font-sans text-[11px] sm:text-xs lg:text-[12px] font-bold tracking-[0.2em] text-[#000000] uppercase">
+                  <h3 className="font-sans text-[13px] sm:text-[14px] lg:text-[13px] xl:text-[14px] 2xl:text-[15px] font-bold tracking-[0.2em] text-[#000000] uppercase">
                     {step.title}
                   </h3>
-                  <p className="mt-0.5 font-playfair text-xs sm:text-[13px] lg:text-[13px] xl:text-[14px] leading-snug lg:leading-relaxed text-[#2D2530]">
-                    {step.description}
+                  <p className="mt-2 sm:mt-2.5 xl:mt-3 font-playfair text-[13px] sm:text-[15px] lg:text-[13px] xl:text-[15px] 2xl:text-[16px] leading-[1.38] text-[#111111]">
+                    <span className="block">{step.line1}</span>
+                    <span className="block">{step.line2}</span>
                   </p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Center Column: Featured Pillar (HOME) */}
+          {/* Center Column: Featured Pillars Carousel */}
           <div className="lg:col-span-4 flex flex-col items-center justify-center">
-            <div className="relative w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] lg:max-w-[340px] xl:max-w-[380px] 2xl:max-w-[410px] transition-transform duration-500 hover:scale-[1.02]">
-              <Image
-                src="/frame3/center-bag-and-vas-art.png"
-                alt="Home offerings artwork with vase, flowers, bag, and sunglasses"
-                width={1000}
-                height={1000}
-                className="h-auto w-full object-contain"
-                sizes="(max-width: 1024px) 100vw, 33vw"
-              />
+            <div className="relative aspect-square w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] lg:max-w-[340px] xl:max-w-[390px] 2xl:max-w-[430px]">
+              {offeringsPillars.map((pillar, index) => {
+                const isActive = index === currentSlide;
+                return (
+                  <div
+                    key={pillar.title}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out flex items-center justify-center ${
+                      isActive ? "opacity-100 z-10 pointer-events-auto" : "opacity-0 z-0 pointer-events-none"
+                    }`}
+                  >
+                    <Image
+                      src={pillar.image}
+                      alt={pillar.alt}
+                      width={1000}
+                      height={1000}
+                      priority={index === 0}
+                      className="h-auto w-full object-contain"
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                    />
+                  </div>
+                );
+              })}
             </div>
-            <p className="mt-2.5 sm:mt-3 font-times text-sm sm:text-base font-bold tracking-[0.25em] text-[#000000] uppercase text-center">
-              HOME
-            </p>
+
+            {/* Changing Pillar Title */}
+            <div className="mt-3 sm:mt-4 h-7 sm:h-8 flex items-center justify-center overflow-hidden">
+              <p
+                key={offeringsPillars[currentSlide].title}
+                className="font-times text-base sm:text-lg md:text-[18px] lg:text-[17px] xl:text-[19px] font-bold tracking-[0.25em] text-[#000000] uppercase text-center transition-all duration-500"
+              >
+                {offeringsPillars[currentSlide].title}
+              </p>
+            </div>
           </div>
 
           {/* Right Column: Editorial Paragraphs */}
-          <div className="lg:col-span-4 flex flex-col justify-center space-y-3 sm:space-y-4 lg:space-y-4 xl:space-y-5 font-playfair text-[12px] sm:text-[13px] md:text-[14px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] leading-[1.6] lg:leading-[1.65] text-[#000000] font-normal">
+          <div className="lg:col-span-4 flex flex-col justify-center space-y-4 sm:space-y-5 lg:space-y-4 xl:space-y-5 2xl:space-y-6 font-playfair text-[13px] sm:text-[15px] md:text-[16px] lg:text-[13px] xl:text-[15px] 2xl:text-[17px] leading-[1.65] lg:leading-[1.7] text-[#000000] font-normal">
             <p>
-              I understand that design is more than just aesthetics—it&apos;s about
-              telling a story, evoking emotions, and creating lasting impressions.
-              Each of these offerings is an extension of this belief, aiming to
-              enhance every space, every outfit, every invitation, and every brand we
-              touch.
+              I understand that design is more than just aesthetics—
+              <br className="hidden xl:inline" />
+              it&apos;s about telling a story, evoking emotions,
+              <br className="hidden xl:inline" />
+              and creating lasting impressions.
+              <br />
+              Each of these offerings is an extension of this belief,
+              <br className="hidden xl:inline" />
+              aiming to enhance every space, every outfit,
+              <br className="hidden xl:inline" />
+              every invitation, and every brand we touch.
             </p>
             <p>
-              Together, these four pillars—Home, Fashion, Invitations, and Branding
-              work harmoniously to elevate the everyday, offering you a complete
-              experience that is thoughtfully designed and beautifully executed.
+              Together, these four pillars—
+              <br className="hidden xl:inline" />
+              Home, Fashion, Invitations, and Branding
+              <br className="hidden xl:inline" />
+              work harmoniously to elevate the everyday,
+              <br className="hidden xl:inline" />
+              offering you a complete experience
+              <br className="hidden xl:inline" />
+              that is thoughtfully designed and beautifully executed.
             </p>
             <p>
-              Join me in celebrating the art of living with style, sophistication, and
-              heart.
+              Join me in celebrating the art of living
+              <br className="hidden xl:inline" />
+              with style, sophistication, and heart.
             </p>
           </div>
         </div>

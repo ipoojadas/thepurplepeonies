@@ -66,7 +66,7 @@ const Banner = () => {
         </div>
 
         {/* Right Illustration - Arched Lilac Door with Purple Peonies */}
-        <div className="lg:col-span-6 xl:col-span-7 relative flex items-end justify-center lg:justify-end h-[380px] sm:h-[480px] md:h-[580px] lg:h-[75vh] xl:h-[82vh] pointer-events-none mt-4 lg:mt-0 lg:pr-6 xl:pr-10 2xl:pr-14">
+        <div className="lg:col-span-6 xl:col-span-7 relative flex items-end justify-center lg:justify-end h-[380px] sm:h-[480px] md:h-[580px] lg:h-[75vh] xl:h-[82vh] pointer-events-none mt-4 lg:mt-0">
           <div className="relative w-full h-full max-w-[840px] flex items-end justify-center lg:justify-end">
             <Image
               src="/frame1/door-and-wall-art-new.png"

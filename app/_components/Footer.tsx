@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import BeeIcon from "./BeeIcon";
-import BrushDivider from "./BrushDivider";
 import Logo from "./Logo";
 import { sectionPadding } from "./sectionPadding";
 
@@ -9,118 +7,152 @@ const socialLinks = [
   {
     label: "Instagram",
     href: "https://instagram.com",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-      </svg>
-    ),
+    icon: "/frame6/instagram-icon.svg",
   },
   {
     label: "Pinterest",
     href: "https://pinterest.com",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-        <path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.334 1.373-.056.23-.182.28-.419.169-1.56-.725-2.533-3.006-2.533-4.841 0-3.94 2.863-7.559 8.257-7.559 4.336 0 7.705 3.09 7.705 7.219 0 4.309-2.716 7.778-6.485 7.778-1.267 0-2.458-.659-2.865-1.437l-.779 2.968c-.282 1.077-1.045 2.427-1.558 3.252 1.139.352 2.348.544 3.606.544 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
-      </svg>
-    ),
+    icon: "/frame6/pinterest-icon.svg",
   },
   {
     label: "Behance",
     href: "https://behance.net",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-        <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-4.115 0-6.625-2.915-6.625-7 0-4.141 2.656-7 6.625-7 4.195 0 6.375 3.087 6.375 6.812 0 .584-.067 1.188-.067 1.188h-9.766c.119 2.375 1.777 3.75 3.558 3.75 1.583 0 2.584-.75 2.973-1.75h2.028zm-7.698-5h5.812c-.156-1.844-1.39-3-2.906-3s-2.75 1.156-2.906 3zm-9.028 5h-4v-12h4.5c2.391 0 4.25 1.344 4.25 3.5 0 1.266-.641 2.312-1.609 2.875 1.312.562 2.109 1.781 2.109 3.266 0 2.406-1.922 3.359-4.25 3.359zm-2-7h2c1.234 0 2.25-.562 2.25-1.75s-1.016-1.75-2.25-1.75h-2v3.5zm0 5h2.25c1.375 0 2.5-.594 2.5-1.875 0-1.25-1.125-1.875-2.5-1.875h-2.25v3.75z" />
-      </svg>
-    ),
+    icon: "/frame6/behance-icon.svg",
   },
   {
     label: "Email",
     href: "mailto:hello@thepurplepeonies.com",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-        <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l9.518 7.713 9.518-7.713v11.817h-19.036z" />
-      </svg>
-    ),
+    icon: "/frame6/mail-icon.svg",
   },
 ];
 
 const Footer = () => {
   return (
-    <footer id="contact" className="relative w-full overflow-hidden">
-      {/* Top Outro Section ("before you go..") */}
-      <div className="bg-[#f9edf7] py-16 sm:py-20 md:py-24">
-        <div className={`grid grid-cols-1 lg:grid-cols-12 items-center gap-10 lg:gap-14 w-full ${sectionPadding}`}>
-          {/* Left Column: Heading & Note */}
-          <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
-            <h2 className="font-script text-5xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] text-[#D48432] leading-none">
-              before you go..{" "}
-              <BeeIcon className="animate-bee translate-y-1 sm:translate-y-2 ml-2" size={32} />
-            </h2>
+    <footer
+      id="contact"
+      className="relative min-h-screen lg:h-screen w-full overflow-hidden flex flex-col justify-between"
+    >
+      {/* Top Outro Section ("before you go..") - 55% Height */}
+      <div className="bg-[#f9edf7] h-[55%] flex flex-col justify-between pt-8 sm:pt-12 lg:pt-0 relative overflow-hidden">
+        <div className={`w-full my-auto relative z-10 ${sectionPadding}`}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-12 w-full">
+            {/* Left Column: Heading & Note */}
+            <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
+              <h2 className="relative inline-flex items-center">
+                <Image
+                  src="/frame6/before-you-go-font-text.png"
+                  alt="before you go.."
+                  width={1400}
+                  height={380}
+                  priority
+                  className="h-9 sm:h-11 md:h-13 lg:h-[48px] xl:h-[58px] 2xl:h-[66px] w-auto object-contain object-left"
+                />
+                <Image
+                  src="/frame1/moving-bee.GIF"
+                  alt="Moving Bee"
+                  width={800}
+                  height={800}
+                  unoptimized
+                  className="absolute right-[-160px] sm:right-[-220px] md:right-[-290px] lg:right-[-370px] xl:right-[-450px] 2xl:right-[-520px] -top-[80px] sm:-top-[110px] md:-top-[145px] lg:-top-[185px] xl:-top-[225px] w-[270px] h-[270px] sm:w-[360px] sm:h-[360px] md:w-[470px] md:h-[470px] lg:w-[585px] lg:h-[585px] xl:w-[700px] xl:h-[700px] max-w-none object-contain pointer-events-none z-10 rotate-[135deg]"
+                />
+              </h2>
 
-            <p className="mt-6 sm:mt-8 font-serif text-base sm:text-lg md:text-[19px] leading-[1.8] text-[#2D2530] max-w-lg">
-              I hope you found something that inspired you, made you smile or
-              sparkled an idea worth chasing.
-            </p>
+              <div className="mt-5 sm:mt-7 space-y-4 sm:space-y-5 font-playfair text-[13.5px] sm:text-[14.5px] md:text-[15.5px] lg:text-[13.5px] xl:text-[15px] 2xl:text-[16.5px] leading-[1.85] sm:leading-[1.9] text-[#2D2530]">
+                <p>
+                  I hope you found something that inspired you,
+                  <br className="hidden sm:inline" />
+                  made you smile or sparkled an idea worth chasing.
+                </p>
+                <p>Thanks for stopping by.</p>
+              </div>
+            </div>
 
-            <p className="mt-4 sm:mt-6 font-serif text-base sm:text-lg md:text-[19px] leading-[1.8] text-[#2D2530] max-w-lg">
-              Thanks for stopping by.
-            </p>
+            {/* Right Column Placeholder for Grid Balance on Large Screens */}
+            <div className="hidden lg:block lg:col-span-6 xl:col-span-6" />
           </div>
+        </div>
 
-          {/* Right Column: Pastel Bicycle with Floral Basket */}
-          <div className="lg:col-span-6 xl:col-span-6 flex items-center justify-center lg:justify-end">
-            <div className="relative w-full max-w-[460px] sm:max-w-[520px] transition-transform duration-500 hover:scale-[1.02]">
+        {/* Bicycle Artwork (anchored directly to bottom-right resting on the divider) */}
+        <div className="relative lg:absolute lg:bottom-0 lg:right-0 w-full pointer-events-none z-10 mt-4 sm:mt-6 lg:mt-0 leading-none">
+          <div className={`w-full flex justify-end ${sectionPadding}`}>
+            <div className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[440px] lg:max-w-[440px] xl:max-w-[520px] 2xl:max-w-[580px] leading-none -mb-1.5 sm:-mb-2 lg:-mb-2.5">
               <Image
-                src="/footer-bicycle-illustration.png"
+                src="/frame6/cycle-bottom-right.png"
                 alt="Pastel vintage bicycle with flower basket on green mound"
-                width={1300}
-                height={750}
-                className="h-auto w-full object-contain"
-                sizes="(max-width: 1024px) 100vw, 45vw"
+                width={1200}
+                height={630}
+                priority
+                className="h-auto w-full object-contain object-bottom block"
+                sizes="(max-width: 1024px) 100vw, 40vw"
               />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Textured Brush Divider */}
-      <BrushDivider />
+      {/* Textured Brush Divider (bottom-border-orange.svg) - positioned on the edge between sections */}
+      <div
+        className="relative w-full shrink-0 leading-none z-20 pointer-events-none -my-2 sm:-my-2.5 md:-my-3 lg:-my-3.5"
+        aria-hidden="true"
+      >
+        <Image
+          src="/frame6/bottom-border-orange.svg"
+          alt=""
+          width={1970}
+          height={146}
+          className="w-full h-4 sm:h-5 md:h-6 lg:h-7 xl:h-8 object-cover object-center block"
+        />
+      </div>
 
-      {/* Bottom Footer Bar */}
-      <div className="bg-[#fff5f0] py-10 md:py-12">
-        <div className={`flex flex-col lg:flex-row items-center justify-between gap-8 w-full ${sectionPadding}`}>
-          {/* Logo */}
-          <div className="shrink-0">
-            <Logo />
+      {/* Bottom Footer Bar - 45% Height */}
+      <div className="bg-[#fff5f0] h-[45%] flex flex-col justify-between pt-6 sm:pt-8 lg:pt-8 xl:pt-10 pb-6 sm:pb-10 md:pb-12 lg:pb-16 xl:pb-24 2xl:pb-32">
+        <div className={`flex flex-col justify-between h-full w-full ${sectionPadding}`}>
+          {/* Top Center: "designed with heart" */}
+          <div className="w-full flex justify-center pt-5 sm:pt-7 md:pt-9 lg:pt-8 xl:pt-11">
+            <Image
+              src="/frame6/design-with-heart-text.png"
+              alt="designed with heart"
+              width={800}
+              height={200}
+              className="h-9 sm:h-10 md:h-12 lg:h-13 xl:h-15 2xl:h-16 w-auto object-contain"
+            />
           </div>
 
-          {/* Center Message & Copyright */}
-          <div className="text-center flex flex-col items-center">
-            <p className="font-script text-2xl sm:text-3xl text-[#D48432] flex items-center gap-1.5">
-              designed with heart{" "}
-              <span className="inline-block text-xl" aria-hidden="true">
-                ♡
-              </span>
-            </p>
-            <p className="mt-2 font-sans text-xs tracking-wider text-[#6B5E6E]">
-              © 2026 The Purple Peonies. All rights reserved.
-            </p>
-          </div>
+          {/* Bottom Row: Logo (Left) | Copyright (Center) | Social Icons (Right) */}
+          <div className="w-full grid grid-cols-1 lg:grid-cols-3 items-end justify-between gap-6 lg:gap-4">
+            {/* Left: Logo */}
+            <div className="flex justify-center lg:justify-start items-end">
+              <Logo imageClassName="h-16 sm:h-20 md:h-24 lg:h-26 xl:h-32 2xl:h-36 w-auto object-contain object-left-bottom" />
+            </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-6 text-[#7E5785]">
-            {socialLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-                className="transition-colors hover:text-[#4B2154] hover:scale-110 transform duration-200"
-              >
-                {link.icon}
-              </Link>
-            ))}
+            {/* Center: Copyright */}
+            <div className="text-center flex justify-center items-end pb-1 sm:pb-1.5 md:pb-2">
+              <p className="font-sans text-xs sm:text-[13px] md:text-sm lg:text-[14px] xl:text-[15px] tracking-wider text-[#111111] font-bold">
+                © 2026 The Purple Peonies. All rights reserved.
+              </p>
+            </div>
+
+            {/* Right: Social Links */}
+            <div className="flex items-center justify-center lg:justify-end gap-6 sm:gap-7 lg:gap-7 xl:gap-8 pb-1 sm:pb-1.5 md:pb-2">
+              {socialLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="transition-transform duration-200 hover:scale-110 opacity-90 hover:opacity-100"
+                >
+                  <Image
+                    src={link.icon}
+                    alt={link.label}
+                    width={36}
+                    height={36}
+                    className="h-7 w-7 sm:h-8 sm:w-8 md:h-8.5 md:w-8.5 lg:h-9 lg:w-9 xl:h-10 xl:w-10 object-contain"
+                  />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

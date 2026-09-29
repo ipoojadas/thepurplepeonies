@@ -97,8 +97,8 @@ const BehindTheScene = () => {
           </div>
         </div>
 
-        {/* Right Column: Books & Flowers + Right Wall Bricks (aligned on bottom, close to text) */}
-        <div className="lg:col-span-5 xl:col-span-5 flex items-end justify-center lg:justify-start gap-6 sm:gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 lg:-translate-x-6 xl:-translate-x-10">
+        {/* Right Column: Books & Flowers + Right Wall Bricks (aligned on bottom) */}
+        <div className="lg:col-span-5 xl:col-span-5 flex items-end justify-center lg:justify-end gap-6 sm:gap-8 lg:gap-10 xl:gap-14 2xl:gap-16">
           <div className="relative w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] lg:max-w-[380px] xl:max-w-[420px] shrink-0">
             <Image
               src="/frame2/books-and-flowers-art.png"
